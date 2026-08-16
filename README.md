@@ -20,7 +20,7 @@ O objetivo principal é oferecer um acervo acessível de questões de lógica �
 
 ## Repositório do Projeto
 ```bash
-git clone git@github.com:thiagocghc/Well_Classificador.git
+git clone git@github.com:thiagocghc/penciledutech.git
 ```
 
 ## 📂 Estrutura
