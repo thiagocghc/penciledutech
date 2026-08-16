@@ -137,10 +137,15 @@ export default function FilterBar({
           <div className="w-full">
             <Select
               value={filters.ano}
-              onChange={(v) => setFilters((s: Filters) => ({ ...s, ano: v }))}
-              options={anos}
-              placeholder="Todos"
-            />
+              onChange={(e) => setFilters((s: Filters) => ({ ...s, ano: e.target.value }))}
+            >
+              <option value="">Todos</option>
+              {anos.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </Select>
           </div>
         </div>
 
@@ -150,12 +155,20 @@ export default function FilterBar({
           <div className="w-full">
             <Select
               value={faseDisplay}
-              onChange={(label) =>
-                setFilters((s: Filters) => ({ ...s, fase: faseLabelToValue.get(label) ?? "" }))
+              onChange={(e) =>
+                setFilters((s: Filters) => ({
+                  ...s,
+                  fase: faseLabelToValue.get(e.target.value) ?? "",
+                }))
               }
-              options={fasesLabels}
-              placeholder="Todas"
-            />
+            >
+              <option value="">Todas</option>
+              {fasesLabels.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </Select>
           </div>
         </div>
 
@@ -165,12 +178,20 @@ export default function FilterBar({
           <div className="w-full">
             <Select
               value={nivelDisplay}
-              onChange={(label) =>
-                setFilters((s: Filters) => ({ ...s, nivel: nivelLabelToValue.get(label) ?? "" }))
+              onChange={(e) =>
+                setFilters((s: Filters) => ({
+                  ...s,
+                  nivel: nivelLabelToValue.get(e.target.value) ?? "",
+                }))
               }
-              options={niveisLabels}
-              placeholder="Todos"
-            />
+            >
+              <option value="">Todos</option>
+              {niveisLabels.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </Select>
           </div>
         </div>
 
@@ -180,10 +201,15 @@ export default function FilterBar({
           <div className="w-full">
             <Select
               value={filters.classe}
-              onChange={(v) => setFilters((s: Filters) => ({ ...s, classe: v }))}
-              options={classes}
-              placeholder="Todas"
-            />
+              onChange={(e) => setFilters((s: Filters) => ({ ...s, classe: e.target.value }))}
+            >
+              <option value="">Todas</option>
+              {classes.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </Select>
           </div>
         </div>
 
@@ -192,7 +218,11 @@ export default function FilterBar({
           <div className="text-xs font-medium text-gray-700">Buscar por título</div>
           <div className="w-full flex items-center gap-2">
             <FaSearch className="text-gray-400 text-sm" />
-            <Input value={search} onChange={setSearch} placeholder="Ex.: biblioteca" />
+            <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Ex.: biblioteca"
+            />
           </div>
         </div>
       </div>
