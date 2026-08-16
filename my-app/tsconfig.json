@@ -18,11 +18,11 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./my-app",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page_older.tsx", "src/components/FilterBar.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page_older.tsx"],
   "exclude": ["node_modules"]
 }
